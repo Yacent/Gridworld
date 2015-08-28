@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="HerbRunner" default="junit" basedir=".">
+	<target name="clean">
+		<delete dir = "*.class"/>
+	</target>
+
+	<target name="compile" depends="clean">
+		<javac srcdir="." destdir=".">
+			<classpath>
+				<pathelement path="gridworld.jar"/>
+			</classpath>
+			<classpath>
+				<pathelement path="junit-4.9.jar"/>
+			</classpath>
+		</javac>
+	</target>
+
+	<target name="junit" depends="compile">
+		<junit printsummary="true">
+			<classpath>
+				<pathelement path="gridworld.jar"/>
+			</classpath>
+			<classpath>
+				<pathelement path="junit-4.9.jar"/>
+			</classpath>
+			<classpath>
+				<pathelement path="."/>
+			</classpath>
+			<test name="HerbCritterTest"/>
+		</junit>
+	</target>
+	
+</project>

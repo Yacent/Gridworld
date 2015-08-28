@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="Test" default="run">
+	<target name="clean">
+		<delete dir="build"/>
+	</target>
+
+	<target name="compile" depends="clean">
+		<mkdir dir="build"/>
+		<javac srcdir="." destdir="build">
+		</javac>
+	</target>
+
+	<target name="run" depends="compile">
+		<java classname="RunnerPart2" fork="true">
+			<classpath>
+				<pathelement path="build"/>
+			</classpath>
+		</java>
+	</target>
+</project>
